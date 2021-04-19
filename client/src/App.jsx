@@ -1,16 +1,18 @@
 import React from "react";
 import "./App.css";
 import Searchbar from "./components/Searchbar/Searchbar";
+import TyreDisplay from "./components/TyreDisplay/TyreDisplay";
 import DataProvider from "./providers/DataProvider";
 
 const App = () => {
  
   return (
+  <DataProvider>
     <div className="App">
-    <DataProvider>
       <Searchbar/>
-    </DataProvider>
+      <TyreDisplay/>
     </div>
+    </DataProvider>
   );
 };
 
