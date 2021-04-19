@@ -18,7 +18,7 @@ const DataProvider = (props) => {
       )
   };
   const getTitleSearch = () => {
-    fetch(`/api/tyres/${searchQuery}`)
+    fetch(`/api/tyres/title/${searchQuery}`)
     .then((res) => res.json())
     .then((data) => setTyres(data))
     .catch((error) => console.log(error))

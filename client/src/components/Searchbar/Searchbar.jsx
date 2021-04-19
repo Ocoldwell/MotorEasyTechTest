@@ -17,7 +17,7 @@ const Searchbar = () => {
     <FormControl >
       <TextField id="standard-search" label="Search here" type="search" onChange={handleSearchTextChange}/>
       <Button variant="contained" color="primary" onClick={handleSearch}>Search</Button>
-      <RadioGroup row>
+      <RadioGroup aria-label="filter" name="filter"  row>
         <FormControlLabel value="brand" control={<Radio />} label="Brand" onChange={handleRadioChange}/>
         <FormControlLabel value="title" control ={<Radio />} label="Title" onChange={handleRadioChange}/>
       </RadioGroup> 
