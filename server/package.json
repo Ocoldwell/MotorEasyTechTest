@@ -5,8 +5,7 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "start": "node motoreasynode/index.js",
-    "build": "cd motoreasyfrontend && npm install && npm run build",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
