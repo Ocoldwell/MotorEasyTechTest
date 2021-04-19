@@ -1,0 +1,12 @@
+.cardContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto;
+  gap: 40px;
+  text-align: center;
+}
+
+.tyreImage {
+  height: 200px;
+  width: auto;
+}

@@ -1,22 +1,19 @@
-import { Card, CardContent, CardHeader, StylesProvider, Typography } from "@material-ui/core";
+import { Card, CardContent, CardHeader, Typography } from "@material-ui/core";
 import React, { useContext } from "react";
 import { DataContext } from "../../providers/DataProvider.js";
 import styles from "./TyreDisplay.module.scss";
-
-
-
 
 const TyreDisplay = () => {
   const { tyres, brands } = useContext(DataContext);
   
   return (
-    <div>
+    <div className={styles.cardContainer}>
       {!tyres
         ? "Loading.."
         : tyres.map((tyre) => {
             return (
               <Card key={tyre._id} >
-                <CardHeader title={tyre.title} subheader={tyre.brand}/>{tyre.title}
+                <CardHeader title={tyre.title} subheader={tyre.brand}/>
                 <img src={tyre.imageUrl} alt="tyreImage" className={styles.tyreImage}/>
                 <CardContent>
                   <Typography variant="h4" component="h4">{tyre.size}</Typography>
