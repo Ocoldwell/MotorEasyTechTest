@@ -32,9 +32,10 @@ router.get("/tyres/:id", async (req, res) => {
   }
 });
 
-router.get("/tyres/:title", async (req, res) => {
+router.get("/tyres/title/:title", async (req, res) => {
+  const title = req.params.title
   try {
-    const tyres = await Tyre.find({ title: req.params.title });
+  const tyres = await Tyre.find({ title : {$regex: title, $options: "ix" }});
     res.send(tyres);
   } catch {
     res.status(404);
@@ -43,8 +44,9 @@ router.get("/tyres/:title", async (req, res) => {
 });
 
 router.get("/:brandid", async (req, res) => {
+  const brandid = req.params.brandid
   try {
-    const tyres = await Tyre.find({brandid: req.params.brandid})
+    const tyres = await Tyre.find({brandid: {$regex: brandid, $options: "ix" }})
     res.send(tyres)
   } catch {
     res.status(404);
