@@ -9,7 +9,7 @@ const DataProvider = (props) => {
   const [searchQuery, setSearchQuery]= useState("")
   const [searchFilter, setSearchFilter]= useState("")
 
-
+  //If I had further time would make these two pure functions.
   const getBrandSearch = () => {
     fetch(`/api/${searchQuery}`)
       .then((res) => res.json())
@@ -17,9 +17,8 @@ const DataProvider = (props) => {
       .catch((error) => console.log(error)
       )
   };
-
   const getTitleSearch = () => {
-    fetch(`/api/tyres/title/${searchQuery}`)
+    fetch(`/api/tyres/${searchQuery}`)
     .then((res) => res.json())
     .then((data) => setTyres(data))
     .catch((error) => console.log(error))

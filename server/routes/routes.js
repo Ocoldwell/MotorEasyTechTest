@@ -32,7 +32,7 @@ router.get("/tyres/:id", async (req, res) => {
   }
 });
 
-router.get("/tyres/title/:title", async (req, res) => {
+router.get("/tyres/:title", async (req, res) => {
   const title = req.params.title
   try {
   const tyres = await Tyre.find({ title : {$regex: title, $options: "ix" }});
