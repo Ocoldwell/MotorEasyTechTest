@@ -1,4 +1,4 @@
-import { Button, FormControl, FormControlLabel, Radio, RadioGroup, StylesProvider, TextField } from '@material-ui/core';
+import { Button, FormControl, FormControlLabel, Radio, RadioGroup, TextField } from '@material-ui/core';
 import React, { useContext } from 'react';
 import { DataContext } from '../../providers/DataProvider';
 import styles from './Searchbar.module.scss';
@@ -13,7 +13,8 @@ const Searchbar = () => {
   }
 
   return (
-    <FormControl className={styles.form}>
+    <div className={styles.form}>
+    <FormControl >
       <TextField id="standard-search" label="Search here" type="search" onChange={handleSearchTextChange}/>
       <Button variant="contained" color="primary" onClick={handleSearch}>Search</Button>
       <RadioGroup row>
@@ -21,6 +22,7 @@ const Searchbar = () => {
         <FormControlLabel value="title" control ={<Radio />} label="Title" onChange={handleRadioChange}/>
       </RadioGroup> 
     </FormControl>
+    </div>
   )
 }
 

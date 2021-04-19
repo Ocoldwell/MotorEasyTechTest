@@ -4,7 +4,7 @@ import { DataContext } from "../../providers/DataProvider.js";
 import styles from "./TyreDisplay.module.scss";
 
 const TyreDisplay = () => {
-  const { tyres, brands } = useContext(DataContext);
+  const { tyres } = useContext(DataContext);
   
   return (
     <div className={styles.cardContainer}>

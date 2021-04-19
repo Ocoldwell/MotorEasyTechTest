@@ -1,5 +1,3 @@
-
-
 export const getTyres = () => {
  return fetch("/api/tyres")
       .then((res) => res.json())

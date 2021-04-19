@@ -32,6 +32,16 @@ router.get("/tyres/:id", async (req, res) => {
   }
 });
 
+router.get("/tyres/:title", async (req, res) => {
+  try {
+    const tyres = await Tyre.find({ title: req.params.title });
+    res.send(tyres);
+  } catch {
+    res.status(404);
+    res.send({ error: "Tyres either do not exist" });
+  }
+});
+
 router.get("/:brandid", async (req, res) => {
   try {
     const tyres = await Tyre.find({brandid: req.params.brandid})

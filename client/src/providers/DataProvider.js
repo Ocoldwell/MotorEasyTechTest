@@ -13,13 +13,17 @@ const DataProvider = (props) => {
   const getBrandSearch = () => {
     fetch(`/api/${searchQuery}`)
       .then((res) => res.json())
-      .then((data) => setTyres(data));
+      .then((data) => setTyres(data))
+      .catch((error) => console.log(error)
+      )
   };
 
   const getTitleSearch = () => {
-    fetch(`/api/${searchQuery}`)
+    fetch(`/api/tyres/${searchQuery}`)
     .then((res) => res.json())
-      .then((data) => setTyres(data));
+    .then((data) => setTyres(data))
+    .catch((error) =>
+    console.log(error))
   }
 
   const handleSearch = () => {
